@@ -1,0 +1,21 @@
+= Grape Juice (Coming soon!)
+
+Rails generator to creates the full structure of a 
+ruby Gem, Rails Application and Plugin / Engine.
+
+I was tired of creating a plugin with the generator and then
+having to make all of the same mods all the time.
+
+It is probably simpler now just to generate an application
+and then add the plugin-specific and gem-specific code.
+
+This generator may end up being more of a rails template
+which makes it kinda pointless.
+
+== Installation / Usage
+
+ config.gem 'jakewendt-grape_juice',
+   :lib => 'grape_juice',
+   :source => 'http://rubygems.org'
+
+Copyright (c) 2010 [George 'Jake' Wendt], released under the MIT license
