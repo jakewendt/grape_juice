@@ -10,7 +10,7 @@ It is probably simpler now just to generate an application
 and then add the plugin-specific and gem-specific code.
 
 This generator may end up being more of a rails template
-which makes it kinda pointless.
+which makes it kinda pointless, but an exercise nonetheless.
 
 == Installation / Usage
 
