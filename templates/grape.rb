@@ -2,15 +2,14 @@ require 'grape_juice'
 
 # cat /usr/lib/ruby/user-gems/1.8/gems/rails-2.3.8/lib/rails_generator/generators/applications/app/template_runner.rb
 
-puts "In Template"
-puts "Command Line"
-puts $command_line.inspect
-
-puts "app_name"
-puts $app_name
-
-#	Plugin
-#	create init.rb, install.rb, uninstall.rb rails/init.rb
+#puts "In Template"
+#puts "Command Line"
+#puts $command_line.inspect
+#	=> ["-d", "mysql", "testin"]
+#
+#puts "app_name"
+#puts $app_name
+#	=> testin
 
 #	CREATE .gitignore
 file ".gitignore", <<-END
@@ -21,17 +20,22 @@ db/*.sqlite3
 versions
 END
 
+
+#	For the 'Ruby Gem'
+#	Modified rake file
+#	VERSION
+
 #	APPEND Rakefile
 append_file 'Rakefile',<<-END
 begin
 	require 'jeweler'
 	Jeweler::Tasks.new do |gem|
-		gem.name = "jakewendt-grape_juice"
+		gem.name = "#{$app_name}"
 		gem.summary = %Q{one-line summary of your gem}
 		gem.description = %Q{longer description of your gem}
-		gem.email = "github@jake.otherinbox.com"
-		gem.homepage = "http://github.com/jakewendt/grape_juice"
-		gem.authors = ["George 'Jake' Wendt"]
+		gem.email = "insert_your_email@here.com"
+		gem.homepage = "insert_a_url_here"
+		gem.authors = ["insert your name here"]
 		# gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
 #
 #		gem.files = FileList['lib/**/*.rb','bin/**/*.rb','templates/**/*.rb']
@@ -50,12 +54,28 @@ rescue LoadError
 end
 END
 
-
-
-
-#	Gem
-#	Modified rake file
-#	VERSION
-
-#	may not work if not in git repo?
 rake "version:write"
+
+
+#	For the 'Rails Plugin'
+#	create init.rb, install.rb, uninstall.rb rails/init.rb
+file "init.rb", <<-END
+require 'rails/init'
+END
+
+file "install.rb", <<-END
+END
+
+file "uninstall.rb", <<-END
+END
+
+file 'rails/init.rb', <<-END
+require '#{$app_name}'
+END
+
+file "lib/#{$app_name}.rb", <<-END
+END
+
+inside "lib/#{$app_name}" do
+end
+

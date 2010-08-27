@@ -14,9 +14,7 @@ which makes it kinda pointless.
 
 == Installation / Usage
 
- config.gem 'jakewendt-grape_juice',
-   :lib => 'grape_juice',
-   :source => 'http://rubygems.org'
+ gem install jakewendt-grape_juice --source http://rubygems.org
 
 == Gemified with Jeweler
 
@@ -27,5 +25,17 @@ which makes it kinda pointless.
 
  rake version:bump:major
  rake release
+
+== References
+
+http://railscasts.com/episodes/33-making-a-plugin
+
+http://railscasts.com/episodes/135-making-a-gem
+
+http://asciicasts.com/episodes/148-app-templates-in-rails-2-3
+
+http://railscasts.com/episodes/183-gemcutter-jeweler
+
+
 
 Copyright (c) 2010 [George 'Jake' Wendt], released under the MIT license
