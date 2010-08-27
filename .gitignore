@@ -1,14 +1,5 @@
 .gitignore
+pkg
 versions
 .DS_Store
 .svn
-/config/aws_sdb_proxy.yml
-/config/backgroundrb.yml
-/config/database.yml
-/config/fed_ex.yml
-/config/flickr.yml
-/config/juggernaut.yml
-/config/juggernaut_hosts.yml
-/config/s3.yml
-/config/initializers/mail.rb
-/config/initializers/session_store.rb

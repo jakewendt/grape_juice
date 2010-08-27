@@ -10,11 +10,13 @@ begin
 		gem.description = %Q{longer description of your gem}
 		gem.email = "github@jake.otherinbox.com"
 		gem.homepage = "http://github.com/jakewendt/grape_juice"
-		gem.authors = ["Jake"]
+		gem.authors = ["George 'Jake' Wendt"]
 		# gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
 
 		gem.files = FileList['lib/**/*.rb','bin/**/*.rb','templates/**/*.rb']
 		gem.test_files = []
+
+		gem.add_dependency('jeweler')
 		gem.add_dependency('rails', '>= 2.3.8')
 
 		gem.default_executable = %q{grape}

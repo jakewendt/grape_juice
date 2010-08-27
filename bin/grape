@@ -15,11 +15,17 @@ if ARGV.first =~ /^_(.*)_$/ and Gem::Version.correct? $1 then
   ARGV.shift
 end
 
-#	There NEEDS to be a lib/grape_juice.rb to do this and that is not accurate!
-#	Any gem could have that.
-#	How to find the location of a specific gem?
-template_dir = Gem.searcher.find('grape_juice').full_gem_path + '/templates'
-ARGV.push("--template=#{template_dir}/grape.rb")
+$command_line = $*.dup
+
+require 'rails_generator'
+require 'rails_generator/scripts'
+require 'rails_generator/scripts/generate'
+
+Rails::Generator::Base.use_application_sources!
+parser = Rails::Generator::Base.instance('app',ARGV.dup,{})
+$app_name = parser.instance_variable_get(:@app_name)
+
+ARGV.push("--template=#{File.expand_path('../../templates/grape.rb',__FILE__)}")
 
 gem 'rails', version
 load Gem.bin_path('rails', 'rails', version)
