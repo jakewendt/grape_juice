@@ -15,15 +15,14 @@ if ARGV.first =~ /^_(.*)_$/ and Gem::Version.correct? $1 then
   ARGV.shift
 end
 
-$command_line = $*.dup
-
-require 'rails_generator'
-require 'rails_generator/scripts'
-require 'rails_generator/scripts/generate'
-
-Rails::Generator::Base.use_application_sources!
-parser = Rails::Generator::Base.instance('app',ARGV.dup,{})
-$app_name = parser.instance_variable_get(:@app_name)
+#$command_line = $*.dup
+#require 'rails_generator'
+#require 'rails_generator/scripts'
+#require 'rails_generator/scripts/generate'
+#
+#Rails::Generator::Base.use_application_sources!
+#parser = Rails::Generator::Base.instance('app',ARGV.dup,{})
+#$app_name = parser.instance_variable_get(:@app_name)
 
 ARGV.push("--template=#{File.expand_path('../../templates/grape.rb',__FILE__)}")
 
